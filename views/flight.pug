@@ -6,4 +6,10 @@ block content
   div(class="container-fluid mt-3")
   div(class="row")
     each flight,index in flights
-        div(class="col-sm-4") #{flight.flightType} - #{flight.price} - #{flight.capacity}
+        div(class="col-sm-4" onclick=`buy(${index})`) #{flight.flightType} - #{flight.price} - #{flight.capacity}
+    script.
+     
+      function buy(itemNo)
+      {
+        alert(`You purchased Item ${itemNo+1}`)
+      }
